@@ -903,7 +903,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 </ul>
 </li>
 </ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/27/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">部署博客失败解决方案</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-02-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-10-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/27/%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">部署博客失败解决方案</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-02-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2023-05-11</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="SpawnFailed">
           <a href="#SpawnFailed" class="heading-link"><i class="fas fa-link"></i></a><a href="#SpawnFailed" class="headerlink" title="SpawnFailed"></a><strong>SpawnFailed</strong></h2>
       <ul>
@@ -923,6 +923,17 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></he
 </li>
 <li>版权声明：本文为CSDN博主「-小豆同学-」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</li>
 <li>原文链接：<span class="exturl"><a class="exturl__link" href="https://blog.csdn.net/qq_49218475/article/details/117334256" target="_blank" rel="noopener">https://blog.csdn.net/qq_49218475/article/details/117334256</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>
+        <h2 id="git提示“Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists-”">
+          <a href="#git提示“Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists-”" class="heading-link"><i class="fas fa-link"></i></a><a href="#git提示“Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists-”" class="headerlink" title="git提示“Please make sure you have the correct access rights and the repository exists.”"></a><strong>git提示“Please make sure you have the correct access rights and the repository exists.”</strong></h2>
+      </li>
+<li>ssh key有问题，导致的连接不上服务器</li>
+<li>首先要重新在git设置一下身份的名字和邮箱。  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email“your@email.com&quot;</span><br></pre></td></tr></table></div></figure></li>
+<li>删除.ssh文件夹（直接搜索该文件夹，一般在C盘的Users文件夹下）</li>
+<li>git输入命令ssh-keygen -t rsa -C “<span class="exturl"><a class="exturl__link" href="mailto:your@email.com">your@email.com</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>“</li>
+<li>复制id_rsa.pub(.ssh文件夹下)全部内容</li>
+<li>打开<span class="exturl"><a class="exturl__link" href="https://github.com/，登陆你的账户，进入设置，进入ssh设置，New" target="_blank" rel="noopener">https://github.com/，登陆你的账户，进入设置，进入ssh设置，New</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> SSH Key，在key中将刚刚复制的id_rsa.pub中的内容粘贴进去，点击add ssh key。</li>
+<li>在git中输入命令：ssh -T <span class="exturl"><a class="exturl__link" href="mailto:git@github.com">git@github.com</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 然后输入yes</li>
+<li>重新hexo d
         <h2 id="remote-Support-for-password-authentication-was-removed-on-August-13-2021">
           <a href="#remote-Support-for-password-authentication-was-removed-on-August-13-2021" class="heading-link"><i class="fas fa-link"></i></a><a href="#remote-Support-for-password-authentication-was-removed-on-August-13-2021" class="headerlink" title="remote: Support for password authentication was removed on August 13, 2021."></a><strong>remote: Support for password authentication was removed on August 13, 2021.</strong></h2>
       </li>
