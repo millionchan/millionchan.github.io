@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="1.问题提出       在半导体材料科学和半导体制造这两个领域，已经积累了大量的数据，需要解决无数的相关问题。如果这些数据能够得到有效分析，将极大地有助于发现新的半导体材料，加速半导体制造的发展。因此，我们需要更有效的方法来处理这些数据和问题，而不是传统的研究方法。                     2. ML算法模式及选择       这些方法大致">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning for Semiconductors">
+<meta property="og:url" content="http://yoursite.com/2022/09/05/Machine%20Learning%20for%20Semiconductors/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.问题提出       在半导体材料科学和半导体制造这两个领域，已经积累了大量的数据，需要解决无数的相关问题。如果这些数据能够得到有效分析，将极大地有助于发现新的半导体材料，加速半导体制造的发展。因此，我们需要更有效的方法来处理这些数据和问题，而不是传统的研究方法。                     2. ML算法模式及选择       这些方法大致">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-05T01:44:21.922Z">
+<meta property="article:modified_time" content="2022-10-10T06:39:32.598Z">
+<meta property="article:author" content="Millionchan">
+<meta name="twitter:card" content="summary"><title>Machine Learning for Semiconductors | Hexo</title><link ref="canonical" href="http://yoursite.com/2022/09/05/Machine%20Learning%20for%20Semiconductors/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Machine Learning for Semiconductors</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-09-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-10-10</span></span></div></header><div class="post-body">
+        <h3 id="1-问题提出">
+          <a href="#1-问题提出" class="heading-link"><i class="fas fa-link"></i></a><a href="#1-问题提出" class="headerlink" title="1.问题提出"></a>1.问题提出</h3>
+      <p>在半导体材料科学和半导体制造这两个领域，已经积累了大量的数据，需要解决无数的相关问题。如果这些数据能够得到有效分析，将极大地有助于发现新的半导体材料，加速半导体制造的发展。因此，我们需要更有效的方法来处理这些数据和问题，而不是传统的研究方法。</p>
+
+        <h3 id="2-ML算法模式及选择">
+          <a href="#2-ML算法模式及选择" class="heading-link"><i class="fas fa-link"></i></a><a href="#2-ML算法模式及选择" class="headerlink" title="2. ML算法模式及选择"></a>2. ML算法模式及选择</h3>
+      <p>这些方法大致可以分为三种类型：监督学习、无监督学习、强化学习。</p>
+<ul>
+<li>监督学习<br>监督学习需要训练数据中的每一个样本都有明确的特征和标签，并且期望学习一个能够将标签和特征联系起来的模型，所以这个模型可以给其他合理的样本贴标签。</li>
+<li>无监督学习<br>无监督学习的训练数据不需要标签，无监督学习的目的一般是对输入数据进行聚类或降维。</li>
+<li>强化学习<br>强化学习可以从零开始获得模型，不需要数据。在学习的过程中，程序尝试访问结果，然后更新策略，尝试获得更好的结果，然后再次尝试，循环直到结果足够好。</li>
+<li>模型选择<br>对于半导体的 ML 任务，大多数任务是分类、预测某些材料特性、预测器件或制造的性能等且材料科学和半导体制造领域有大量数据。因此，ML 在该领域的大多数应用都在监督学习的范围内。
+        <h3 id="3-数据准备">
+          <a href="#3-数据准备" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-数据准备" class="headerlink" title="3.数据准备"></a>3.数据准备</h3>
+      </li>
+<li>数据要求<ul>
+<li>适合训练目标模型，如果原始数据不适合，则需要进行一些转换</li>
+<li>足以代表背后的规则和训练一个好的模型</li>
+<li>尽可能准确地给出隐藏的统计分布</li>
+</ul>
+</li>
+<li>根据 ML 中使用的特征，用于描述样本的特征可以分为三类<ul>
+<li>原子构型-类型+位置</li>
+<li>原子信息-原子序数、电负性…</li>
+<li>材料特性-晶格常数、空间群、吸收光谱…
+        <h3 id="4-ML模型">
+          <a href="#4-ML模型" class="heading-link"><i class="fas fa-link"></i></a><a href="#4-ML模型" class="headerlink" title="4.ML模型"></a>4.ML模型</h3>
+      </li>
+</ul>
+</li>
+<li>支持向量机SVM<br>SVM已被用于预测一种材料是半导体还是金属，或者一种半导体的间隙是直接的还是间接的，或其他属性 </li>
+<li>核岭回归KRR<br>它隐式地将初始特征转换为新的高维特征空间。这将带来两个好处：更强的表达能力，以及在原始特征空间中的非线性拟合效果只是在新特征空间中的线性拟合。<br>由于KRR方法需要一个N × N矩阵，其中 N 是样本点的数量，它更适用于小系统或小样本的问题，如有机材料。</li>
+<li>决策树DT和随机森林RF<br>DT 和 RF 算法都广泛应用于半导体材料和制造的许多问题，例如预测间隙，其他材料属性、晶圆检测，技术优化，制造故障检测</li>
+<li>深度神经网络DNN<br>DNN 可以自动提取样本或输入数据的隐藏、深层特征。<br>DNN 和 ANN 已被用于许多研究中。关于半导体，研究人员将它们应用于形成能预测、间隙、其他材料特性、材料加工优化、制造技术优化, 晶圆检测, 制造故障检测等</li>
+<li>线性拟合法<br>线性拟合方法已被用于预测间隙、磁性能，以提高晶圆质量，提高制造良率等。</li>
+<li>Boost算法<br>可以提高某种学习模型的训练效果</li>
+<li>主动学习<br>允许在将学习模型应用于预测时对其进行改进。因此它已被应用于处理一些在训练前难以收集到足够合适数据的问题，如机器学习力场（MLFF）</li>
+<li>其他算法<br>如遗传算法（GA），朴素贝耶斯（NB），迁移学习（TL）等
+        <h3 id="5-半导体材料科学的学习过程">
+          <a href="#5-半导体材料科学的学习过程" class="heading-link"><i class="fas fa-link"></i></a><a href="#5-半导体材料科学的学习过程" class="headerlink" title="5.半导体材料科学的学习过程"></a>5.半导体材料科学的学习过程</h3>
+      </li>
+<li>取样<br>没有免费的午餐定理表示：如果训练集与测试集无关，任何模型都不能比在测试集中随机猜测更好。</li>
+<li>特征工程<br>描述符是否能够表达对研究目标很重要的特定特征是非常重要的。这是另一个决定机器学习结果好坏的核心因素。</li>
+<li>训练和预测<br>平衡过拟合和欠拟合：扩大训练数据外，调整超参数
+        <h3 id="6-半导体机器学习的现状">
+          <a href="#6-半导体机器学习的现状" class="heading-link"><i class="fas fa-link"></i></a><a href="#6-半导体机器学习的现状" class="headerlink" title="6.半导体机器学习的现状"></a>6.半导体机器学习的现状</h3>
+      </li>
+<li>新材料发现</li>
+<li>性能预测</li>
+<li>半导体制造</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://yoursite.com">Millionchan</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://yoursite.com/2022/09/05/Machine%20Learning%20for%20Semiconductors/">http://yoursite.com/2022/09/05/Machine%20Learning%20for%20Semiconductors/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/09/21/SQL%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">SQL基础教程</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/08/24/pytorch%E5%AD%A6%E4%B9%A0/"><span class="paginator-prev__text">pytorch学习</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-问题提出"><span class="toc-number">1.</span> <span class="toc-text">
+          1.问题提出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ML算法模式及选择"><span class="toc-number">2.</span> <span class="toc-text">
+          2. ML算法模式及选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数据准备"><span class="toc-number">3.</span> <span class="toc-text">
+          3.数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ML模型"><span class="toc-number">4.</span> <span class="toc-text">
+          4.ML模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-半导体材料科学的学习过程"><span class="toc-number">5.</span> <span class="toc-text">
+          5.半导体材料科学的学习过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-半导体机器学习的现状"><span class="toc-number">6.</span> <span class="toc-text">
+          6.半导体机器学习的现状</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Millionchan</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v4.2.1</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>

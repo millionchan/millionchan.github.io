@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="梯度域机器学习GDML        准确的能量保持型分子力场的机器学习Machine learning of accurate energy-conserving molecular force fields   使用有限数量的样本从从头算分子动力学（AIMD）轨迹中构建精确的分子力场 GDML的实现能够重现中等大小分子的全局势能面 GDML方法能够以明确">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GDML and sGDML">
+<meta property="og:url" content="http://yoursite.com/2022/10/10/GDML%20and%20sGDML/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="梯度域机器学习GDML        准确的能量保持型分子力场的机器学习Machine learning of accurate energy-conserving molecular force fields   使用有限数量的样本从从头算分子动力学（AIMD）轨迹中构建精确的分子力场 GDML的实现能够重现中等大小分子的全局势能面 GDML方法能够以明确">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-10T12:27:28.990Z">
+<meta property="article:modified_time" content="2022-10-11T11:31:44.913Z">
+<meta property="article:author" content="Millionchan">
+<meta name="twitter:card" content="summary"><title>GDML and sGDML | Hexo</title><link ref="canonical" href="http://yoursite.com/2022/10/10/GDML%20and%20sGDML/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">GDML and sGDML</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-10-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-10-11</span></span></div></header><div class="post-body">
+        <h2 id="梯度域机器学习GDML">
+          <a href="#梯度域机器学习GDML" class="heading-link"><i class="fas fa-link"></i></a><a href="#梯度域机器学习GDML" class="headerlink" title="梯度域机器学习GDML"></a>梯度域机器学习GDML</h2>
+      <ol>
+<li>准确的能量保持型分子力场的机器学习Machine learning of accurate energy-conserving molecular force fields</li>
+</ol>
+<ul>
+<li>使用有限数量的样本从从头算分子动力学（AIMD）轨迹中构建精确的分子力场</li>
+<li>GDML的实现能够重现中等大小分子的全局势能面</li>
+<li>GDML方法能够以明确的AIMD计算的一小部分成本对分子进行定量的分子动力学模拟，从而允许构建高效的力场，并具有高水平的非初始方法的准确性和可转移性。
+        <h2 id="对称梯度域机器学习sGDML">
+          <a href="#对称梯度域机器学习sGDML" class="heading-link"><i class="fas fa-link"></i></a><a href="#对称梯度域机器学习sGDML" class="headerlink" title="对称梯度域机器学习sGDML"></a>对称梯度域机器学习sGDML</h2>
+      </li>
+</ul>
+<ol>
+<li>构建具有量子化学精确性的机器学习力场:应用和化学洞察力Construction of Machine Learned Force Fields with Quantum Chemical Accuracy: Applications and Chemical Insights</li>
+</ol>
+<ul>
+<li><p>即使只使用几百个分子构象进行训练，也能够以高精度重建复杂的高维势能面（PES）</p>
+</li>
+<li><p>sGDML框架的灵活性质可以捕捉到局部和非局部的电子相互作用（如H键、孤对、立体排斥、杂化状态的变化，而不会对原子间势的性质施加任何限制。</p>
+</li>
+<li><p>这个模型的主要特点是，它在数学上被设想为一个可分析的无曲线框架并应用了能量守恒定律。一旦sGDML被训练出来，势能函数也就可用了。该模型的第二个基本属性是，通过明确纳入分子对称性（即刚性和流动性），降低了重建过程的复杂性。对称性是通过一个多部分程序从参考数据集中自动提取的。</p>
+</li>
+<li><p>在这个框架中，所有的原子相互作用都是全局建模的，这意味着学习问题的解决不需要任何固有的非唯一的原子间的、成对的或任何其他的多体划分。因此，该方法保留了量子问题的多体性质。这些核心属性有助于提高sGDML模型从有限的参考计算中学习到中等大小分子的复杂PES的能力，这是其他ML方法学所不能完成的任务。</p>
+</li>
+<li><p>关键思想是使用高斯过程（GP）将力场建模为未知势能面</p>
+</li>
+<li><p>该模型的完全对称化需要对其输入的所有可能的排列组合进行求和。为了避免与大型对称组求和相关的组合挑战，我们将自己限制在物理上合理的刚性空间组和通量对称的更小的子集上，{Pq}S q=1。提取这些对称性通常需要关于所研究系统的化学和物理直觉，例如旋转障碍，这在ML环境中是不切实际的。为了使这一步骤自动化，我们采用了一个多部件匹配方案，以识别和恢复系统在训练数据集中所经历的包络转换。这是通过寻找使成本函数最小化的互换操作τ来实现的。</p>
+</li>
+<li><p>sGDML框架具有很高的数据效率，即使在只有几百个参考数据点的情况下，也能实现最先进的预测。</p>
+</li>
+<li><p>机器学习力场（ML-FFs）利用从AIMD轨迹（或任何其他采样方法）产生的分子数据集中编码的相关性来重建基本的PES，而不对原子间相互作用施加任何特定的明确分析形式。此外，机器学习是基于严格的统计学习理论[18, 19]，为FF学习提供了一个强大而通用的框架。鉴于有足够数量的数据样本（如分子能量和原子力）进行训练，ML方法可以以任意的精度重建复杂的高维对象。</p>
+</li>
+</ul>
+<ol start="3">
+<li>梯度域机器学习（GDML）的分子力场。与经典力场的比较和协同作用Molecular force fields with gradient-domain machine learning (GDML): Comparison and synergies with classical force fields</li>
+<li>sGDML：利用机器学习构建准确和数据高效的分子力场sGDML: Constructing accurate and data efficient molecular force fields using machine learning</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://yoursite.com">Millionchan</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://yoursite.com/2022/10/10/GDML%20and%20sGDML/">http://yoursite.com/2022/10/10/GDML%20and%20sGDML/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/18/sgdml%E6%A8%A1%E5%9E%8B/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">sgdml模型</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/10/Towards%20Exact%20Molecular%20Dynamics%20Simulations%20with%20Machine-Learned%20Force%20Fields/"><span class="paginator-prev__text">Towards Exact Molecular Dynamics Simulations with Machine-Learned Force Fields</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#梯度域机器学习GDML"><span class="toc-number">1.</span> <span class="toc-text">
+          梯度域机器学习GDML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对称梯度域机器学习sGDML"><span class="toc-number">2.</span> <span class="toc-text">
+          对称梯度域机器学习sGDML</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Millionchan</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v4.2.1</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
