@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="离线安装        离线包下载 将两个文件合并为一个 cat deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.0 deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.1 &gt; deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="deepmd安装及使用">
+<meta property="og:url" content="http://yoursite.com/2023/06/14/deepmd%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="离线安装        离线包下载 将两个文件合并为一个 cat deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.0 deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.1 &gt; deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-14T08:33:20.846Z">
+<meta property="article:modified_time" content="2023-06-14T08:32:35.819Z">
+<meta property="article:author" content="Millionchan">
+<meta name="twitter:card" content="summary"><title>deepmd安装及使用 | Hexo</title><link ref="canonical" href="http://yoursite.com/2023/06/14/deepmd%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Hexo</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">deepmd安装及使用</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2023-06-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2023-06-14</span></span></div></header><div class="post-body">
+        <h3 id="离线安装">
+          <a href="#离线安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h3>
+      <ol>
+<li><a href="'https://github.com/deepmodeling/deepmd-kit/releases'">离线包下载</a></li>
+<li>将两个文件合并为一个<ul>
+<li><code>cat deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.0 deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh.1 &gt; deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh</code></li>
+</ul>
+</li>
+<li><code>sh deepmd-kit-2.2.2-cuda11.6_gpu-Linux-x86_64.sh</code><ul>
+<li><code>Enter</code></li>
+<li><code>yes</code></li>
+</ul>
+</li>
+<li>测试是否安装成功<ul>
+<li><code>/data/home/scv5029/deepmd-kit/bin/dp -h</code></li>
+<li>其中<code>/data/home/scv5029/deepmd-kit</code>为安装路径
+        <h3 id="教程">
+          <a href="#教程" class="heading-link"><i class="fas fa-link"></i></a><a href="#教程" class="headerlink" title="教程"></a>教程</h3>
+      </li>
+</ul>
+</li>
+<li>训练过程<ul>
+<li>数据 –&gt;训练–&gt;冻结/压缩模型</li>
+<li>准备数据是将DFT的计算结果转换为DeePMD套件可以识别的数据。</li>
+<li>训练是使用 DeePMD 套件使用上一步中准备的数据训练深度潜力模型。</li>
+<li>将训练过程中的重启文件冻结/压缩到模型中。</li>
+</ul>
+</li>
+<li>教程数据<ul>
+<li>准备数据<code>00.data</code><ul>
+<li>假设您有一个用于分子动力学的“OUTCAR”，其中包含 1000 个帧。<code>set_size=200</code>表示这1000个点将被分成5个子集，分别命名为<code>data/set.000</code>~<code>data/set.004</code>。每组大小为200。在这5组中，<code>data/set.000</code>-<code>data/set.003</code>将被DeePMD-kit视为训练集，并被<code>data/set.004</code>视为测试集。默认情况下，最后一组将被DeePMD-kit视为测试集。如果只有一组，则该组既是训练集又是测试集。（当然，这样的测试集是没有意义的。）</li>
+<li>我们提供的“OUTCAR”只包含1个框架，所以在“data”目录下（与“OUTCAR”在同一目录下）只有1组：<code>data/set.000</code>. 如果要使用这些数据，需要完成一些程序。现在我们只是跳过这些细节并使用我们为您准备的数据。数据位于我们教程数据的根目录中。</li>
+</ul>
+</li>
+<li>训练<code>01.train</code><ul>
+<li><code>input.json</code>参数<ul>
+<li>DeePMD-kit的强大之处在于相同的训练参数适用于不同的系统，所以我们只需要稍微修改一下input.json就可以开始训练了。<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在 DeePMD-kit 数据中，每个原子类型都从 0 开始编号为一个整数。该参数为编号系统中的每个原子提供了一个元素名称。在这里，我们可以从`data/type_map.raw`复制</span></span><br><span class="line">"type_map":     ["O", "H"],</span><br><span class="line"><span class="meta">#</span><span class="bash">邻居搜索参数。此列表中的每个数字给出了原子的相邻原子中每种类型原子的最大数量。例如，46表示最多有 46 个O（类型0）邻居。这里我们的元素修改为A, B, C, 所以这个参数也需要修改。如果不知道最大邻居数怎么办？你可以通过系统的密度来粗略估计一个，或者盲目地尝试一个数字。如果它不够大，DeePMD-kit 会发出警告。</span></span><br><span class="line">"sel":       [46, 92],</span><br><span class="line">"training_data":&#123;</span><br><span class="line">  "systems":     ["../data/data_0/", "../data/data_1/", "../data/data_2/"],</span><br><span class="line">"validation_data":&#123;</span><br><span class="line">   "systems":     ["../data/data_3"],       </span><br><span class="line"><span class="meta">#</span><span class="bash">eePMD-kit 认为具有相应元素类型和原子序数的数据构成一个系统。如果数据无法放入一个系统，这里需要设置多个系统为一个列表：   </span></span><br><span class="line">"systems": ["system1", "system2"]</span><br><span class="line"><span class="meta">#</span><span class="bash">numb_steps是使用深度学习的SGD方法训练的步数。（这只是一个例子，实际中应该设置一个更大的数字）</span></span><br><span class="line">"numb_steps":   1000,</span><br></pre></td></tr></table></div></figure></li>
+<li>开始训练<code>dp train input.json</code></li>
+<li>在训练过程中，我们可以看到lcurve.out观察到误差减少。其中，第4列和第5列是能量的测试和训练误差（按原子数归一化），第6和7列是能量的测试和训练误差力。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>冻结/压缩模型<ul>
+<li>冻结<code>dp freeze -o graph.pb</code></li>
+<li>输出模型的默认文件名是graph.pb. 我们可以使用以下脚本来压缩模型：<code>dp compress -i graph.pb -o graph-compress.pb</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工作流程<ul>
+<li>数据准备：基于从头计算生成训练数据并进行格式转换;</li>
+<li>模型训练：准备输入脚本，然后使用数据和脚本训练DP模型;</li>
+<li>模型应用：使用获得的DP模型进行MD仿真或模型推理。</li>
+</ul>
+</li>
+<li>示例<ul>
+<li>详见<span class="exturl"><a class="exturl__link" href="https://tutorials.deepmodeling.com/en/latest/Tutorials/DeePMD-kit/learnDoc/Handson-Tutorial%28v2.0.3%29.html#example-a-gas-phase-methane-molecule" target="_blank" rel="noopener">气相甲烷分子</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> <figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> CH4</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span><br><span class="line">00.data 01.train 02.lmp</span><br><span class="line"><span class="meta">#</span><span class="bash">文件夹 00.data 包含数据</span></span><br><span class="line"><span class="meta">#</span><span class="bash">文件夹 01.train 包含一个示例输入脚本，用于使用 DeePMD-kit 训练模型</span></span><br><span class="line"><span class="meta">#</span><span class="bash">文件夹 02.lmp 包含用于分子动力学模拟的 LAMMPS 示例脚本</span></span><br></pre></td></tr></table></div></figure></li>
+<li>AIMD数据生成<ul>
+<li>DeePMD-kit的训练数据包含原子类型、模拟框、原子坐标、原子力、系统能量和维里。具有此信息的分子系统的快照称为frame。一个数据系统包括许多共享相同数量原子和原子类型的frame。例如，分子动力学轨迹可以转换为数据系统，每个时间步长对应于系统中的一个frame</li>
+</ul>
+</li>
+<li>training_data<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls training_data</span></span><br><span class="line">set.000 type.raw type_map.raw</span><br></pre></td></tr></table></div></figure>
+<ul>
+<li><code>type.raw</code><figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat training_data/type.raw </span></span><br><span class="line">0 0 0 0 1</span><br><span class="line"><span class="meta">#</span><span class="bash">例子中有 5 个原子，4 个原子用类型“0”表示，1 个原子用类型“1”表示</span></span><br></pre></td></tr></table></div></figure></li>
+<li><code>type_map.raw</code><ul>
+<li>有时用户需要将整数类型映射到原子名称。映射可以由<code>type_map.raw</code>文件给出<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat training_data/type_map.raw </span></span><br><span class="line">H C</span><br><span class="line"><span class="meta">#</span><span class="bash">类型“0”由“H”命名，类型“1”由“C”命名</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>运行教程<ul>
+<li>数据集：Si216</li>
+<li>数据格式转换<ul>
+<li>DeePMD-kit 采用压缩数据格式。所有的训练数据都应该首先转换成这种格式，然后才能被 DeePMD-kit 使用。</li>
+<li><code>pip install dpdata</code>，使用dpdata进行数据格式转换可以分两步完成：load data和dump data。</li>
+<li>dpdata提供将vasprun.xml、POSCAR、OUTCAR等格式文件转换成.npy格式。<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dpdata </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">data = dpdata.LabeledSystem(<span class="string">'vasprun-300-0.xml'</span>, fmt = <span class="string">'vasp/xml'</span>) <span class="comment">#其中vasprun-300-0.xml为文件名，fmt为文件格式</span></span><br><span class="line"><span class="comment">#文件包含1000frames数据</span></span><br><span class="line">print(<span class="string">'# the data contains %d frames'</span> % len(data))</span><br></pre></td></tr></table></div></figure></li>
+<li>按顺序选择前800frames作为训练数据，其余作为验证数据<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># choose 200 index for validation_data</span></span><br><span class="line"><span class="comment">#index_validation = np.random.choice(1000,size=200,replace=False)     </span></span><br><span class="line">index_validation=[x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">800</span>,<span class="number">1000</span>)]</span><br><span class="line"><span class="comment"># other indexes are training_data</span></span><br><span class="line"><span class="comment">#index_training = list(set(range(1000))-set(index_validation))  </span></span><br><span class="line">index_training=[x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">800</span>)]        </span><br><span class="line">data_training = data.sub_system(index_training)</span><br><span class="line">data_validation = data.sub_system(index_validation)</span><br><span class="line"><span class="comment"># all training data put into directory:"training_data" </span></span><br><span class="line">data_training.to_deepmd_npy(<span class="string">'training_data'</span>)                    </span><br><span class="line"><span class="comment"># all validation data put into directory:"validation_data"</span></span><br><span class="line">data_validation.to_deepmd_npy(<span class="string">'validation_data'</span>)                </span><br><span class="line">print(<span class="string">'# the training data contains %d frames'</span> % len(data_training)) </span><br><span class="line">print(<span class="string">'# the validation data contains %d frames'</span> % len(data_validation))</span><br></pre></td></tr></table></div></figure></li>
+<li>已经完成数据转换。DeePMD-kit 格式的数据存储在文件夹 00.data 中</li>
+<li>training_data<figure class="highlight shell"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls training_data</span></span><br><span class="line">set.000 type.raw type_map.raw</span><br><span class="line"><span class="meta">#</span><span class="bash">set.000 是一个目录，包含压缩格式的数据（numpy 压缩数组）。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">type.raw 是一个文件，包含原子的类型（以整数表示）</span></span><br><span class="line"><span class="meta">#</span><span class="bash">type_map.raw 是一个文件，包含原子的类型名称。如果读取出现错误，可以考虑将其删掉，input.json中有原子类型名称</span></span><br></pre></td></tr></table></div></figure></li>
+</ul>
+</li>
+<li>输入脚本<ul>
+<li>新建训练目录<code>01.train</code>，包含<code>input.json</code>训练脚本。通过在input.json中指定关键字的值来指定训练过程。具体参考<span class="exturl"><a class="exturl__link" href="https://tutorials.deepmodeling.com/en/latest/Tutorials/DeePMD-kit/learnDoc/Handson-Tutorial%28v2.0.3%29.html#example-a-gas-phase-methane-molecule" target="_blank" rel="noopener">关键字解释手册</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+<li>复制CH4中的<code>input.json</code>，此处对该文件做如下修改，<span class="exturl"><a class="exturl__link" href="https://zhuanlan.zhihu.com/p/347349149?utm_id=0" target="_blank" rel="noopener">参考</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><ul>
+<li>原子名称<code>&quot;type_map&quot;:[&quot;Si&quot;],</code></li>
+<li>数据写入的文件路径<code>&quot;systems&quot;: [&quot;../00.data/training_data&quot;],</code></li>
+<li><code>&quot;numb_steps&quot;:1000000,</code></li>
+<li><code>&quot;decay_steps&quot;:5000,</code>其中<code>&quot;decay_steps=numb_steps/200&quot;</code></li>
+<li><code>&quot;sel&quot;: [216],</code>数据集仅包含一种类型的元素（“Si”），将其更改为<code>&quot;sel&quot;: [216],</code>。否则会报错<code>ValueError: Cannot feed value of shape (3,) for Tensor d_sea_t_natoms:0, which has shape (4,)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>训练过程<code>dp train input.json</code><ul>
+<li>可以看到数据系统的信息以及本次训练的起始和最终学习率。每1000步打印一次信息</li>
+<li><code>DEEPMD INFO    start training at lr 1.00e-03 (== 1.00e-03), decay_step 5000, decay_rate 0.950006, final lr will be 3.51e-08</code></li>
+<li>在第 10000 个批次结束时，模型保存在Tensorflow的检查点文件中<code>model.ckpt</code>。同时，训练和测试错误在<code>lcurve.out</code>文件中</li>
+<li><code>cat lcurve.out</code>查看lcurve.out<ul>
+<li>lcurve.out 包含 8 列，从左到右分别是训练步骤、验证损失、训练损失、均方根（RMS）能量验证误差、RMS 能量训练误差、RMS 力验证误差、RMS力的训练误差和学习率。能量的均方根误差 (RMSE) 通过系统中的原子数归一化。</li>
+</ul>
+</li>
+<li>可视化lcurve.out<figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">data &#x3D; np.genfromtxt(&quot;lcurve.out&quot;, names&#x3D;True)</span><br><span class="line">for name in data.dtype.names[1:-1]:</span><br><span class="line">     plt.plot(data[&#39;step&#39;], data[name], label&#x3D;name)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.xlabel(&#39;Step&#39;)</span><br><span class="line">plt.ylabel(&#39;Loss&#39;)</span><br><span class="line">plt.xscale(&#39;symlog&#39;)</span><br><span class="line">plt.yscale(&#39;log&#39;)</span><br><span class="line">plt.grid()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></div></figure></li>
+<li>当训练过程异常停止时，我们可以通过简单地运行<code>dp train  --restart model.ckpt  input.json</code>从提供的检查点重新开始训练</li>
+<li>冻结模型<code>dp freeze -o graph.pb</code><ul>
+<li>其中 -o 表示输出，用于指定输出模型的名称</li>
+<li>输出一个以<code>graph.pb</code>当前目录命名的模型文件</li>
+<li>压缩模型压缩的 DP 模型通常可以将基于 DP 的计算速度提高一个数量级，并且消耗更少的内存。</li>
+</ul>
+</li>
+<li>压缩模型<code>dp compress -i graph.pb -o graph-compress.pb</code><ul>
+<li>其中 -i 表示输入，用于导入未冻结的模型</li>
+<li>输出一个名为<code>graph-compress.pb</code></li>
+</ul>
+</li>
+<li>测试模型<code>dp test -m graph-compress.pb -s ../00.data/validation_data -n 40 -d results</code><ul>
+<li>其中-m表示model，用于导入模型文件，-s表示system，指定测试数据集的路径，-n表示number，指定要测试的帧数，-d表示detail，写入细节能量、力和力力到不同的文件。</li>
+<li>在当前目录中输出名为<code>results.e.out</code>和<code>results.f.out</code>的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模型应用<ul>
+<li>使用 LAMMPS 运行 MD，创建02.lmp文件夹</li>
+<li>将训练目录中的输出模型软链接到当前目录<ul>
+<li><code>ln -s ../01.train/graph-compress.pb</code></li>
+<li>该文件夹出现三个文件<code>conf.lmp</code>、<code>graph-compress.pb</code>、<code>in.lammps</code><ul>
+<li>其中<code>conf.lmp</code>给出了气相甲烷 MD 模拟的初始配置，<code>in.lammps</code>是 LAMMPS 输入脚本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>运行lammps<code>lmp  -i  in.lammps</code></li>
+<li>生成<code>log.lammps</code>和<code>ch4.dump</code>文件。它们分别存储热力学信息和分子的轨迹。</li>
+</ul>
+</li>
+<li>模型推理<ul>
+<li>可以使用 DP 模型来评估 LAMMPS 轨迹中每一frame的能量<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dpdata  </span><br><span class="line">d=dpdata.System(<span class="string">'ch4.dump'</span>, fmt = <span class="string">"lammps/dump"</span>, type_map = [<span class="string">"H"</span>, <span class="string">"C"</span>])  </span><br><span class="line">d1 = d.predict(dp = <span class="string">"./graph-compress.pb"</span>)  </span><br><span class="line">print(d1[<span class="string">"energies"</span>])</span><br></pre></td></tr></table></div></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>参考：<br><span class="exturl"><a class="exturl__link" href="https://docs.deepmodeling.com/projects/deepmd/en/master/index.html" target="_blank" rel="noopener">https://docs.deepmodeling.com/projects/deepmd/en/master/index.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br><span class="exturl"><a class="exturl__link" href="https://zhuanlan.zhihu.com/p/88433094" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/88433094</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br><span class="exturl"><a class="exturl__link" href="https://www.bilibili.com/video/BV1V3411i786/?vd_source=67f07b34f45ec685ea4ed70c9153d409" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1V3411i786/?vd_source=67f07b34f45ec685ea4ed70c9153d409</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="http://yoursite.com">Millionchan</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="http://yoursite.com/2023/06/14/deepmd%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/">http://yoursite.com/2023/06/14/deepmd%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/05/18/sGDML%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4/"><span class="paginator-prev__text">sGDML使用步骤</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#离线安装"><span class="toc-number">1.</span> <span class="toc-text">
+          离线安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#教程"><span class="toc-number">2.</span> <span class="toc-text">
+          教程</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Millionchan</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v4.2.1</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
